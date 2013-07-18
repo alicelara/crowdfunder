@@ -6,4 +6,4 @@ development:
 test:
   adapter: postgresql
   database: crowdfunder_test
-  host: localhost 
+  host: localhost
