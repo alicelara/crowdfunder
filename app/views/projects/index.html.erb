@@ -1,23 +1,10 @@
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="brand" href="#">CrowdFunder</a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li class="<%= 'active' if current_page? root_path %>">
-            <%= link_to 'Home', :root %>
-          </li>
-          <li class="<%= 'active' if current_page? projects_path %>">
-            <%= link_to 'Projects', :projects %>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+
 <h1>Listing projects</h1>
 <% @projects.each do |proj| %>
-	<div>Title - <%= proj[:title] %> </div>
+	<% proj.inspect %>
+  <div>Title - <%= proj[:title] %> </div>
 	<div>Goal - <%= proj[:goal] %> </div>
 	<div> <%= proj[:teaser] %> </div>
+  <div> <%= link_to proj.title, project_path(proj.id) %></div>
 	<% end %>
+  <h1>above there is listing</h1>
