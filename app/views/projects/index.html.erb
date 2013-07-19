@@ -1,0 +1,6 @@
+<h1>Listing projects</h1>
+<% @projects.each do |proj| %>
+	<div>Title - <%= proj[:title] %> </div>
+	<div>Goal - <%= proj[:goal] %> </div>
+	<div> <%= proj[:teaser] %> </div>
+	<% end %>
