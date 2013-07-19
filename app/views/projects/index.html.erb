@@ -5,6 +5,5 @@
   <div>Title - <%= proj[:title] %> </div>
 	<div>Goal - <%= proj[:goal] %> </div>
 	<div> <%= proj[:teaser] %> </div>
-  <div> <%= link_to proj.title, project_path(proj.id) %></div>
+  <div> <%= link_to proj.title, project_path(proj) %></div>
 	<% end %>
-  <h1>above there is listing</h1>

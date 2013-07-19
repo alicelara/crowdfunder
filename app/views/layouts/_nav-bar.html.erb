@@ -4,10 +4,14 @@
       <a class="brand" href="#">CrowdFunder</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="<%= 'active' if current_page? root_path %>">
+
+          <li class="<%= cp(root_path) %>">
             <%= link_to 'Home', :root %>
           </li>
-          <li class="<%= 'active' if current_page? projects_path %>">
+
+          <li class="<%= cp(projects_path) || (@project && cp(project_path(@project))) %>">
+         
+
             <%= link_to 'Projects', :projects %>
           </li>
         </ul>
