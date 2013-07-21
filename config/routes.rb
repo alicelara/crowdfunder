@@ -1,5 +1,11 @@
 Crowdfunder::Application.routes.draw do
 
+  get "pledges/index"
+
+  get "pledges/new"
+
+  get "pledges/edit"
+
   root :to => "projects#index"
 	get "logout" => "sessions#destroy", :as => "logout"
 	get "login" => "sessions#new", :as => "login"
