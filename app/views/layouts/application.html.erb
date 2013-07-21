@@ -9,7 +9,14 @@
 <body>
 <%= render 'layouts/nav-bar' %>
 
-<%= yield %>
+    <% if flash[:notice] %>
+      <div class="alert alert-block">
+        <p id='notice'><%= flash[:notice]%></p>   
+      </div>
+    <% end %>
 
+   
+<%= yield %>
+	 </div>
 </body>
 </html>

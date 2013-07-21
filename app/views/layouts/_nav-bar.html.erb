@@ -10,10 +10,14 @@
           </li>
 
           <li class="<%= cp(projects_path) || (@project && cp(project_path(@project))) %>">
-         
-
-            <%= link_to 'Projects', :projects %>
-          </li>
+           <%= link_to 'Projects', :projects %>
+           
+            <% if current_user %>
+           <li> <%= link_to "Logout", logout_path %></li>
+            <% else %>
+           <li> <%= link_to "Sign Up", signup_path %> </li>
+           <li> <%= link_to "log in", login_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>
