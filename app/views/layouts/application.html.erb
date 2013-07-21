@@ -8,13 +8,17 @@
 </head>
 <body>
 <%= render 'layouts/nav-bar' %>
-
     <% if flash[:notice] %>
       <div class="alert alert-block">
         <p id='notice'><%= flash[:notice]%></p>   
       </div>
     <% end %>
 
+    <% if flash[:alert] %>
+      <div class="alert alert-block">
+        <p class='alert'><%= flash[:alert] %></p>
+      </div>
+    <% end %>
    
 <%= yield %>
 	 </div>
