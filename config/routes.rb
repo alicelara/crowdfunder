@@ -1,17 +1,19 @@
 Crowdfunder::Application.routes.draw do
 
-  get "pledges/index"
-
-  get "pledges/new"
-
-  get "pledges/edit"
 
   root :to => "projects#index"
 	get "logout" => "sessions#destroy", :as => "logout"
 	get "login" => "sessions#new", :as => "login"
 	get "signup" => "users#new", :as => "signup"
   
-  resources :projects
+  resources :projects do
+ 		resources :pledges, only: [:new, :create]
+ 	end
+
+ 	 	namespace :my do
+ 		resources :projects do
+ 		end
+ 	end
 
   resources :users, except: [:index]
 

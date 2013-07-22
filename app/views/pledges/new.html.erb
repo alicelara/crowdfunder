@@ -1,2 +1,8 @@
-<h1>Pledges#new</h1>
-<p>Find me in app/views/pledges/new.html.erb</p>
+<%= form_for [@project, @pledge] do |f| %>
+
+	<%= f.label :amount %>
+	<%= f.number_field :amount %>
+
+	<%= f.submit "Pledge Now" %>
+
+<% end %>
